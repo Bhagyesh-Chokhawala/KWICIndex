@@ -88,11 +88,7 @@ Provide detail for IO method -OUTPUT, IO Option - File, Attribute - FileName
 ```
 For string preference (S/s) the output will be displayed on string with debug info
 ```
-Total executions - <<number of Shifted Lines in input>>
-Total executions completed - <<number of Shifted Lines successfully processed>>
-<<Output Strings>>
-Total execution time: <<Execution time in ms - after preference and inputs provided>>
-<<error info or Exit status>>
+No input requires from user for Console Output.
 ```
 Example
 ```
