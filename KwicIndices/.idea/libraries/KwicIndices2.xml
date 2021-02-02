@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="KwicIndices">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../KWICIndex/KwicIndices/out/artifacts/KwicIndices_jar/KwicIndices.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
