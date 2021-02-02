@@ -1,7 +1,5 @@
 package KwicIndices.outputFormat;
 
-import java.util.Formatter;
-
 public class PainTextOutput implements Output {
     @Override
     public StringBuilder loadOutput(String[] body) {

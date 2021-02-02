@@ -1,7 +1,5 @@
 package KwicIndices.outputFormat;
 
-import dataStructure.LineStore;
-
 import java.util.Arrays;
 import java.util.Formatter;
 

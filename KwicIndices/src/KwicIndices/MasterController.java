@@ -17,9 +17,7 @@ public class MasterController {
         IOProcessingContext IOProcessingContext = new IOProcessingContext(IOPreference.IOMethods.INPUT);
         IOProcessingContext.executeStrategy();
         long startTime = System.currentTimeMillis();
-       // System.out.println("Total executions - "+ LineStore.getInstance().totalInputCount);
         do {
-           // System.out.println("Total executions completed - " + executionCount);
         } while (MasterController.executionCount != LineStore.getInstance().totalInputCount || LineStore.getInstance().totalInputCount == 0);
         executor.shutdown();
         while (true) {

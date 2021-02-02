@@ -34,9 +34,6 @@ public class CircularShift {
         }
 
         String[] filteredShifts = getShiftsWithoutIgnoredWordLeading(shifts);
-        //for (int i=0;i<filteredShifts.length;i++) {
-         //   filteredShifts[i] = capitalizeWordsNotIgnoredInShift(filteredShifts[i]);
-        //}
 
         return filteredShifts;
     }
@@ -75,27 +72,6 @@ public class CircularShift {
     private boolean isShiftStartingWithIgnoredWord(String line) {
         return this._wordsToIgnore.isWordIgnored(line.split(DELIMITER)[0]);
     }
-    private String capitalizeWordsNotIgnoredInShift(String shift) {
-        String[] words = shift.split(DELIMITER);
-        StringBuilder builder = new StringBuilder();
-
-        for (String str : words) {
-            if (this._wordsToIgnore.isWordIgnored(str)) {
-                builder.append(str);
-            } else if (str.trim().isEmpty()) {
-                continue;
-            } else {
-                builder.append(Character.toUpperCase(str.charAt(0))).append(str.substring(1));
-            }
-            builder.append(DELIMITER);
-        }
-        if (builder.length() > 0) {
-            builder.deleteCharAt(builder.length() - 1);
-        }
-
-        return builder.toString();
-    }
-
     private String removeNonAlphanumericInShift(String shift) {
         String[] words = shift.split(DELIMITER);
         StringBuilder builder = new StringBuilder();

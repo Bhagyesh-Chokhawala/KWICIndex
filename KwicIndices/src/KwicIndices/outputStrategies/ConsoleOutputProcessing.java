@@ -1,7 +1,6 @@
 package KwicIndices.outputStrategies;
 
 import KwicIndices.outputFormat.FooterOutput;
-import KwicIndices.outputFormat.HeaderOutput;
 import KwicIndices.outputFormat.Output;
 import KwicIndices.outputFormat.PainTextOutput;
 

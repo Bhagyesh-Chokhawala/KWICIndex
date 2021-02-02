@@ -3,7 +3,6 @@ package KwicIndices.inputStrategies;
 import dataStructure.IOPreference;
 import resources.Constants;
 import dataStructure.LineStore;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 
