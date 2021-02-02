@@ -14,8 +14,5 @@ public class ConsoleOutputProcessing implements KwicIndices.outputStrategies.Out
         Output output = new PainTextOutput();
         output = new FooterOutput(output);
         System.out.println( output.loadOutput(result).toString());
-       // for (String str : result) {
-         //   System.out.println(str);
-        //}
     }
 }
