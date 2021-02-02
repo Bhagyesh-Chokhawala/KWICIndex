@@ -137,23 +137,32 @@ Process finished with exit code 0
 
 ```
 ## Understanding Code
-**KwicIndies**:
-* **MasterController** - Main thread controls overall execution flow.
-* **IOProcessing** - IOProcessing, IOProcessingContext, InputProcessing and OutputProcessing facilitates accepting input and generating output using Strategy Pattern.
-* **CircularShift** - It's a helper class that hosts logic to generate shifted lines for any provided single line.
-* **IndicesProcessor** - facilitates as a container to execute separate thread for CircularShift processing.
-* **Alphabetizer** - Alphabetizer, AlphabetizerContext, CaseIgnoreAlphabetizer and CaseSensitiveAlphabetizer facilite alphabetization using case ignore/ case sensitive sorting.
-* **LineStore** - singleton data structure to store provided input lines, generated shifted lines and total for inputlines after reading all inputlines. It also triggers event in each input line it receives.
+
+**dataStructure**:
 * **IOPreference** - Singleton data structure to store user's preference as system is collecting input and output both option at start (in order to provide better usability) without waiting for completion of processing.
+* **LineStore** - singleton data structure to store provided input lines, generated shifted lines and total for inputlines after reading all inputlines. It also triggers event in each input line it receives.
+  
+**event**:
+* Input received event, the event triggers when the application has a single line available to process.
 
 **framework**:
-    - Basic Event bus with interfaces to implement event or contract
-
-**event**:
-    - Input received event, the event triggers when the application has a single line available to process.
+* Basic Event bus with interfaces to implement event or contract
+* Includes resource manager - Singleton object which facilitates reading of configuration from resource property file using dynamic resource loader. 
 
 **handler**:
-    - Handler for input received event. The handler read the string and trigger instance of IndicesProcessor with ExecutorService to start generating shifted lines for each line parallel.
+* Handler for input received event. The handler read the string and trigger instance of IndicesProcessor with ExecutorService to start generating shifted lines for each line parallel.
+
+**KwicIndies**:
+* **alphabetizerStrategies** - Facilitates alphabetization using case ignore/ case sensitive sorting. The implementation has been achieved using Strategy Pattern. 
+* **inputStrategies** - Facilitates processing of different inputs Console/ File. The implementation has been achieved using Strategy Pattern.
+* **ioProcessing** - Facilitates processing of different IO events - Input/Output. The implementation has been achieved using Strategy Pattern and it calls other strategies based on selected IO strategies. 
+* **outputFormat** - Facilitates bulding output for different output strategies. This implementation has been achieved using Decorate Pattern. Console output includes plaintext string + footer vs Output file includes plaintext output+ header+ footer.
+* **outputStrategies** - Facilitates processing of different Output Console/ File. The implementation has been achieved using Strategy Pattern.
+* **processors** - Halper classes which facilitates processing circular shift for words within string. It also includes processing of thread through circularshift as and when it reads anyline. 
+* **MasterController** - Main thread controls overall execution flow.
+
+**resources**:
+* Facilitates defining config properties and defining constants for the project.
 ### Testing Facts
 
 ```
