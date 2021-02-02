@@ -50,12 +50,14 @@ Run a jar file - KWICIndex.jar
 Provide preference for Input. The options are not case-sensitive but browse path and file names for file may be case-sensitive depends on runtime OS.
 
 ```
-Please provide INPUT preference: Enter F to process Text File OR Enter S to key in lines.
+Please provide INPUT preference: Choose the option from below list.
+Keyin - 'F', For - File
+Keyin - 'S', For - Console
 <<f or s>>
 ```
 For string preference (F/f) provide the full browse path of plaintext input file.
 ```
-Provide browse path for INPUT txt file
+Provide detail for IO method -INPUT, IO Option - File, Attribute - FileName
 <<browse path of Plain text file>>
 ```
 For string preference (S/s) provide the input string line by line.
@@ -64,18 +66,25 @@ Enter lines (terminate input by entering empty line)
 <<Enter input lines seperated by Return/Enter key>>
 <<terminate input by entering empty line - press enter/return key without entering any string>>
 ```
+For sorting preference CaseIgnore/CaseSensitive Key in Y/N.
+```
+Prefer match case sort, select appropriate option
+Keyin - 'Y', For - CaseIgnore
+Keyin - 'N', For - CaseSensitive
+<<Y or N>>
+```
 Provide preference for output. The options are not case-sensitive but browse path and file names for file may be case-sensitive depends on runtime OS.
 
 ```
-Please provide OUTPUT preference: Enter F to process Text File OR Enter S to key in lines.
+Please provide OUTPUT preference: Choose the option from below list.
+Keyin - 'F', For - File
+Keyin - 'S', For - Console
 <<f or s>>
 ```
 For string preference (F/f) the output will be written in the file.
 ```
-Total executions - <<number of Shifted Lines in input>>
-Total executions completed - <<number of Shifted Lines successfully processed>>
-Total execution time: <<Execution time in ms - after preference and inputs provided>>
-<<error info or Exit status>>
+Provide detail for IO method -OUTPUT, IO Option - File, Attribute - FileName
+<<browse path of Plain text file>>
 ```
 For string preference (S/s) the output will be displayed on string with debug info
 ```
@@ -87,45 +96,46 @@ Total execution time: <<Execution time in ms - after preference and inputs provi
 ```
 Example
 ```
-/Users/Bhagyesh/Library/Java/JavaVirtualMachines/openjdk-15.0.2/Contents/Home/bin/java -Dfile.encoding=UTF-8 -jar /Users/Bhagyesh/Documents/MS/out/artifacts/KwicIndices_jar/KwicIndices.jar
-Please provide INPUT preference: Enter F to process Text File OR Enter S to key in lines.
+/Users/Rita/Library/Java/JavaVirtualMachines/openjdk-15.0.2/Contents/Home/bin/java -Dfile.encoding=UTF-8 -jar /Users/Rita/Documents/MS/KWICIndex/out/artifacts/KWICIndex_jar/KWICIndex.jar
+Please provide INPUT preference: Choose the option from below list.
+Keyin - 'F', For - File
+Keyin - 'S', For - Console
+f
+Provide detail for IO method -INPUT, IO Option - File, Attribute - FileName
+/Users/Rita/Documents/MS/KWICIndex/KwicIndices/Input/TextInput.txt
+Prefer match case sort, select appropriate option
+Keyin - 'Y', For - CaseIgnore
+Keyin - 'N', For - CaseSensitive
+y
+Please provide OUTPUT preference: Choose the option from below list.
+Keyin - 'F', For - File
+Keyin - 'S', For - Console
 s
-Please provide OUTPUT preference: Enter F to process Text File OR Enter S to key in lines.
-s
-Enter lines (terminate input by entering empty line)
-What is gooder than god, more evil than the devil, the rich need it,
-the poor have it,
 and if you eat it you will die? 
-
-Total executions - 3
-Total executions completed - 3
-and if you eat it you will die
-devil the rich need it What is gooder than god more evil than the
+devil more evil than the
 die and if you eat it you will
 eat it you will die and if you
-evil than the devil the rich need it What is gooder than god more
-god more evil than the devil the rich need it What is gooder than
-gooder than god more evil than the devil the rich need it What is
+evil than the devil more
+god What is gooder than
+gooder than god What is
 have it the poor
 if you eat it you will die and
-is gooder than god more evil than the devil the rich need it What
 it the poor have
-it What is gooder than god more evil than the devil the rich need
+it the rich need
 it you will die and if you eat
-more evil than the devil the rich need it What is gooder than god
-need it What is gooder than god more evil than the devil the rich
+more evil than the devil,
+need it the rich
 poor have it the
-rich need it What is gooder than god more evil than the devil the
-than god more evil than the devil the rich need it What is gooder
-than the devil the rich need it What is gooder than god more evil
-the devil the rich need it What is gooder than god more evil than
-the poor have it
-the rich need it What is gooder than god more evil than the devil
-What is gooder than god more evil than the devil the rich need it
-will die and if you eat it you
+rich need it the
+than god What is gooder
+than the devil more evil
+What is gooder than god,
 you eat it you will die and if
 you will die and if you eat it
-Total execution time: 16
+
+==========================================================================================
+Total Lines in Output : 21
+Total execution time: 21
 
 Process finished with exit code 0
 
