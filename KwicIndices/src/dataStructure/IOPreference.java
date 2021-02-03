@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public class IOPreference {
     private static IOPreference singleInstance = null;
     public List<Preference> preferenceList;
-    public Map<String,String> sortPreferenceList;
+    public Map<String,String> casePreferenceList;
     public  class Preference{
         public String iD;
         public String displayName;
@@ -29,9 +29,9 @@ public class IOPreference {
         preferenceList = gson.fromJson(jsonString, type);
         //System.out.println(String.join(",",preferenceMap.values()););
        // preferenceList.forEach(k-> System.out.println("Press - '"+k.iD+"', For - "+k.displayName));
-        jsonString = Constants.SORTOPTION;
+        jsonString = Constants.CASEOPTION;
         type = new TypeToken<Map<String,String>>(){}.getType();
-        sortPreferenceList = gson.fromJson(jsonString, type);;
+        casePreferenceList = gson.fromJson(jsonString, type);;
     }
 
     public static IOPreference getInstance() {
@@ -115,13 +115,13 @@ public class IOPreference {
             sc = new Scanner(System.in);
             System.out.println("Do you prefer non case sensitive execution? - It impacts sort order and shifts ignore word.");
             System.out.println("select appropriate option");
-            sortPreferenceList.entrySet().forEach(entry->{
+            casePreferenceList.entrySet().forEach(entry->{
                 System.out.println("Keyin - '"+entry.getKey() + "', For - " + entry.getValue());
             });
             String input = sc.next().substring(0,1).toUpperCase();
 
-            if (sortPreferenceList.containsKey(input.toUpperCase()))
-                aData.put(Constants.SORTPREFERENCE_KEY, sortPreferenceList.get(input));
+            if (casePreferenceList.containsKey(input.toUpperCase()))
+                aData.put(Constants.CASEPREFERENCE_KEY, casePreferenceList.get(input));
 
         }
         setIOPreference(aMethod, aData);

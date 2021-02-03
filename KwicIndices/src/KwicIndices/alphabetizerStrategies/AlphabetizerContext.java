@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class AlphabetizerContext {
     private  Alphabetizer strategy;
-    private static String[] ioPreference = {Constants.SORTPREFERENCE_KEY};
+    private static String[] ioPreference = {Constants.CASEPREFERENCE_KEY};
     private static Map<String,String> alphabetizerProcessor;
     private static void AlphabetizerStrategies()
     {
@@ -28,7 +28,7 @@ public class AlphabetizerContext {
             ClassLoader classLoader = this.getClass().getClassLoader();
 
             // Load the target class using its binary name
-            Class loadedMyClass = classLoader.loadClass(alphabetizerProcessor.get(IOPreference.getInstance().getIOPreferenceData(IOPreference.IOMethods.INPUT,ioPreference).get(Constants.SORTPREFERENCE_KEY)));
+            Class loadedMyClass = classLoader.loadClass(alphabetizerProcessor.get(IOPreference.getInstance().getIOPreferenceData(IOPreference.IOMethods.INPUT,ioPreference).get(Constants.CASEPREFERENCE_KEY)));
 
             //  System.out.println("Loaded class name: " + loadedMyClass.getName());
 

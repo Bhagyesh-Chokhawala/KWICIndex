@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class WordsToIgnoreContext {
     private static Map<String,String> wordToIgnoreStrategies;
-    private static String[] ioPreference = {Constants.SORTPREFERENCE_KEY};
+    private static String[] ioPreference = {Constants.CASEPREFERENCE_KEY};
     private static void WordToIgnoreStrategies()
     {
         String jsonString = Constants.WORDTOIGNORESTRATEGIES;
@@ -29,7 +29,7 @@ public class WordsToIgnoreContext {
             ClassLoader classLoader = WordsToIgnore.class.getClassLoader();
 
             // Load the target class using its binary name
-            Class loadedMyClass = classLoader.loadClass(wordToIgnoreStrategies.get(IOPreference.getInstance().getIOPreferenceData(IOPreference.IOMethods.INPUT,ioPreference).get(Constants.SORTPREFERENCE_KEY)));
+            Class loadedMyClass = classLoader.loadClass(wordToIgnoreStrategies.get(IOPreference.getInstance().getIOPreferenceData(IOPreference.IOMethods.INPUT,ioPreference).get(Constants.CASEPREFERENCE_KEY)));
 
               //System.out.println("Loaded class name: " + loadedMyClass.getName());
 
