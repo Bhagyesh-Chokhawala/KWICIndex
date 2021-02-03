@@ -68,7 +68,8 @@ Enter lines (terminate input by entering empty line)
 ```
 For sorting preference CaseIgnore/CaseSensitive Key in Y/N.
 ```
-Prefer match case sort, select appropriate option
+Do you prefer non case sensitive execution? - It impacts sort order and shifts ignore word.
+select appropriate option
 Keyin - 'Y', For - CaseIgnore
 Keyin - 'N', For - CaseSensitive
 <<Y or N>>
@@ -99,7 +100,8 @@ Keyin - 'S', For - Console
 f
 Provide detail for IO method -INPUT, IO Option - File, Attribute - FileName
 /Users/Rita/Documents/MS/KWICIndex/KwicIndices/Input/TextInput.txt
-Prefer match case sort, select appropriate option
+Do you prefer non case sensitive execution? - It impacts sort order and shifts ignore word.
+select appropriate option
 Keyin - 'Y', For - CaseIgnore
 Keyin - 'N', For - CaseSensitive
 y
@@ -158,7 +160,7 @@ Process finished with exit code 0
 * **ioProcessing** - Facilitates processing of different IO events - Input/Output. The implementation has been achieved using Strategy Pattern and it calls other strategies based on selected IO strategies. 
 * **outputFormat** - Facilitates bulding output for different output strategies. This implementation has been achieved using Decorate Pattern. Console output includes plaintext string + footer vs Output file includes plaintext output+ header+ footer.
 * **outputStrategies** - Facilitates processing of different Output Console/ File. The implementation has been achieved using Strategy Pattern.
-* **processors** - Halper classes which facilitates processing circular shift for words within string. It also includes processing of thread through circularshift as and when it reads anyline. 
+* **processors** - Helper classes which facilitates processing circular shift for words within string including shifts with ignore words processing. It also includes processing of thread through circularshift as and when it reads any line. 
 * **MasterController** - Main thread controls overall execution flow.
 
 **resources**:

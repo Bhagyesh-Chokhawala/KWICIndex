@@ -113,7 +113,8 @@ public class IOPreference {
             });
         if (aMethod==IOMethods.INPUT) {
             sc = new Scanner(System.in);
-            System.out.println("Prefer match case sort, select appropriate option");
+            System.out.println("Do you prefer non case sensitive execution? - It impacts sort order and shifts ignore word.");
+            System.out.println("select appropriate option");
             sortPreferenceList.entrySet().forEach(entry->{
                 System.out.println("Keyin - '"+entry.getKey() + "', For - " + entry.getValue());
             });

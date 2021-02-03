@@ -21,7 +21,7 @@ public class CircularShift {
     public CircularShift(String line) {
         assert(line != null);
         this._line = line;
-        this._wordsToIgnore = WordsToIgnore.getWordsToIgnore();
+        this._wordsToIgnore = WordsToIgnoreContext.getWordsToIgnore();
     }
 
     public String[] getCircularShifts() {

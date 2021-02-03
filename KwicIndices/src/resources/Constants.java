@@ -14,6 +14,7 @@ public abstract class Constants
     private static final String OUTPUTPROCESSOR_PROP ="KwicIndices.outputProcessor";
     private static final String ALPHABETIZERROCESSOR_PROP ="KwicIndices.AlphabetizerProcessor";
     private static final String SHIFTIGNOREWORDS_PROP ="KwicIndices.shiftIgnoreWords";
+    private static final String WORDTOIGNORESTRATEGIES_PROP ="KwicIndices.WordToIgnoreStrategies";
 
 
     private static final int THREADPOOL_SIZE_DEF = 5;
@@ -24,6 +25,7 @@ public abstract class Constants
     private static final String OUTPUTPROCESSOR_DEF = "KwicIndices.outputStrategies.ConsoleOutputProcessing";
     private static final String ALPHABETIZERROCESSOR_DEF = "KwicIndices.alphabetizerStrategies.CaseIgnoreAlphabetizer";
     private static final String SHIFTIGNOREWORDS_DEF ="";
+    private static final String WORDTOIGNORESTRATEGIES_DEF = "KwicIndices.processors.WordsToIgnoreCaseSensitive";
 
 
     public static final int THREADPOOL_SIZE = ResourceManager.getResources().getPropertyOrDefault(Constants.THREADPOOL_SIZE_PROP, Constants.THREADPOOL_SIZE_DEF);
@@ -36,5 +38,6 @@ public abstract class Constants
     public static final String OUTPUTPROCESSOR = ResourceManager.getResources().getPropertyOrDefault(Constants.OUTPUTPROCESSOR_PROP,OUTPUTPROCESSOR_DEF);
     public static final String ALPHABETIZERROCESSOR = ResourceManager.getResources().getPropertyOrDefault(Constants.ALPHABETIZERROCESSOR_PROP,ALPHABETIZERROCESSOR_DEF);
     public static final List<String> SHIFTIGNOREWORDS = ResourceManager.getResources().getCommaSeperatedPropertyOrDefault(Constants.SHIFTIGNOREWORDS_PROP,SHIFTIGNOREWORDS_DEF.split(","));
+    public static final String WORDTOIGNORESTRATEGIES = ResourceManager.getResources().getPropertyOrDefault(Constants.WORDTOIGNORESTRATEGIES_PROP,WORDTOIGNORESTRATEGIES_DEF);
 
 }
