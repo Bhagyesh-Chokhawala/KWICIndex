@@ -1,0 +1,24 @@
+Date : Wed Feb 03 19:16:06 EST 2021++++++++++++++++++++++++++++++++++Total Input lines : 5
+==========================================================================================
+
+and if you eat it you will die? 
+devil more evil than the
+die and if you eat it you will
+eat it you will die and if you
+evil than the devil more
+god What is gooder than
+gooder than god What is
+have it the poor
+if you eat it you will die and
+more evil than the devil,
+need it the rich
+poor have it the
+rich need it the
+than god What is gooder
+than the devil more evil
+What is gooder than god,
+you eat it you will die and if
+you will die and if you eat it
+
+==========================================================================================
+Total Lines in Output : 18

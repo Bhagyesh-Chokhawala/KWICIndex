@@ -11,4 +11,5 @@ public class PainTextOutput implements Output {
         }
         return painTextOutput;
     }
+    public PainTextOutput (Output output){}
 }

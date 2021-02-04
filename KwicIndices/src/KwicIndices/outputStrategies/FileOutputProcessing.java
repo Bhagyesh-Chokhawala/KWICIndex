@@ -1,13 +1,14 @@
 package KwicIndices.outputStrategies;
 
-import KwicIndices.outputFormat.FooterOutput;
-import KwicIndices.outputFormat.HeaderOutput;
+
 import KwicIndices.outputFormat.Output;
-import KwicIndices.outputFormat.PainTextOutput;
+import com.google.gson.Gson;
 import dataStructure.IOPreference;
+import resources.Constants;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.lang.reflect.Constructor;
 
 public class FileOutputProcessing implements OutputProcessor {
    private  static final String attrFileName = "FileName";
@@ -23,9 +24,21 @@ public class FileOutputProcessing implements OutputProcessor {
         try {
             writer = new BufferedWriter(new FileWriter(
                     fileName));
-            Output output = new PainTextOutput();
+            //String[] outputs = {"KwicIndices.outputFormat.PainTextOutput", "KwicIndices.outputFormat.HeaderOutput", "KwicIndices.outputFormat.FooterOutput"};
+            Gson gson = new Gson();
+            String[] outputs = gson.fromJson(Constants.CONSOLEOUTPUTLAYOUT, String[].class);
+            Output output = null;
+            int size = outputs.length;
+            ClassLoader classLoader = this.getClass().getClassLoader();
+            for (int i=0; i<size; i++)
+            {
+                Class loadedMyClass = classLoader.loadClass(outputs[i]);
+                Constructor constructor = loadedMyClass.getConstructor(Output.class);
+                output= (Output) constructor.newInstance(output);
+            }
+           /* Output output = new PainTextOutput();
             output = new HeaderOutput(output);
-            output = new FooterOutput(output);
+            output = new FooterOutput(output);*/
             writer.write( output.loadOutput(result).toString());
             writer.close();
         } catch (Exception e) {
