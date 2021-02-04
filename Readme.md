@@ -166,20 +166,19 @@ Process finished with exit code 0
 **resources**:
 * Facilitates defining config properties and defining constants for the project.
 * Configuration dictionary :
-```  
-  KwicIndices.threadpool.size - Number of threads will execute in parallel with executorservice.
-  KwicIndices.delimiter= delimiter character for shifts, in Unicode.
-  KwicIndices.ioOptions= IO options definition ID, displayname and attributes. User will be prompted to provide the attribute. Current implementation has strategy only for file and console IO. Any new IO option need to define new strategy.
-  KwicIndices.defaultIOOption= if IO options are not defined what would be default option.
-  KwicIndices.caseOptions= Case preference for execution. Strategy has been defined for Case ignore and case sensitive for any new option need to implement strategy. These options will impact sort order and ignore word comparison.
-  KwicIndices.inputProcessor= Defines iooption strategy to input processor mapping.
-  KwicIndices.outputProcessor= Defines iooption strategy to output processor mapping.
-  KwicIndices.AlphabetizerProcessor=Defines case options to alphabetizer processor mapping.
-  KwicIndices.shiftIgnoreWords=coma separate list of ignore words. The words are staying in actual case but case options determines execution time consideration.
-  KwicIndices.WordToIgnoreStrategies=Defines case options to word to ignore mapping.
-  KwicIndices.ConsoleOutputLayout = Defines layout of console output.
-  KwicIndices.FileOutputLayout = Defines layout of File output.
- ```
+  * **KwicIndices.threadpool.size** - Number of threads will execute in parallel with executorservice.
+  * **KwicIndices.delimiter** -  delimiter character for shifts, in Unicode.
+  * **KwicIndices.ioOptions** -  IO options definition ID, displayname and attributes. User will be prompted to provide the attribute. Current implementation has strategy only for file and console IO. Any new IO option need to define new strategy.
+  * **KwicIndices.defaultIOOption** -  if IO options are not defined what would be default option.
+  * **KwicIndices.caseOptions** -  Case preference for execution. Strategy has been defined for Case ignore and case sensitive for any new option need to implement strategy. These options will impact sort order and ignore word comparison.
+  * **KwicIndices.inputProcessor** -  Defines iooption strategy to input processor mapping.
+  * **KwicIndices.outputProcessor** -  Defines iooption strategy to output processor mapping.
+  * **KwicIndices.AlphabetizerProcessor** - Defines case options to alphabetizer processor mapping.
+  * **KwicIndices.shiftIgnoreWords** - coma separate list of ignore words. The words are staying in actual case but case options determines execution time consideration.
+  * **KwicIndices.WordToIgnoreStrategies** - Defines case options to word to ignore mapping.
+  * **KwicIndices.ConsoleOutputLayout** -  Defines layout of console output.
+  * **KwicIndices.FileOutputLayout** -  Defines layout of File output.
+  
 ### Testing Facts
 
 ```
