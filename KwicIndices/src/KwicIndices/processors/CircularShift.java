@@ -1,6 +1,7 @@
 package KwicIndices.processors;
 
 import framework.ResourceManager;
+import resources.Constants;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -58,14 +59,14 @@ public class CircularShift {
 
     private String[] getShiftsWithoutIgnoredWordLeading(String[] shifts) {
         List<String> shiftList = new ArrayList<String>(Arrays.asList(shifts));
-
-        Iterator<String> iter = shiftList.iterator();
-        while (iter.hasNext()) {
-            if (isShiftStartingWithIgnoredWord(iter.next())) {
-                iter.remove();
+        if(Constants.SHIFTIGNOREWORDSENABLE) {
+            Iterator<String> iter = shiftList.iterator();
+            while (iter.hasNext()) {
+                if (isShiftStartingWithIgnoredWord(iter.next())) {
+                    iter.remove();
+                }
             }
         }
-
         return shiftList.toArray(new String[shiftList.size()]);
     }
 

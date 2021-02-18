@@ -24,9 +24,8 @@ public class FileOutputProcessing implements OutputProcessor {
         try {
             writer = new BufferedWriter(new FileWriter(
                     fileName));
-            //String[] outputs = {"KwicIndices.outputFormat.PainTextOutput", "KwicIndices.outputFormat.HeaderOutput", "KwicIndices.outputFormat.FooterOutput"};
             Gson gson = new Gson();
-            String[] outputs = gson.fromJson(Constants.CONSOLEOUTPUTLAYOUT, String[].class);
+            String[] outputs = gson.fromJson(Constants.FILEOUTPUTLAYOUT, String[].class);
             Output output = null;
             int size = outputs.length;
             ClassLoader classLoader = this.getClass().getClassLoader();
@@ -36,9 +35,6 @@ public class FileOutputProcessing implements OutputProcessor {
                 Constructor constructor = loadedMyClass.getConstructor(Output.class);
                 output= (Output) constructor.newInstance(output);
             }
-           /* Output output = new PainTextOutput();
-            output = new HeaderOutput(output);
-            output = new FooterOutput(output);*/
             writer.write( output.loadOutput(result).toString());
             writer.close();
         } catch (Exception e) {

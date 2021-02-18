@@ -4,20 +4,20 @@ import java.util.Arrays;
 import java.util.Formatter;
 
 public class FooterOutput extends OutputDecorator{
-    private Output output;
     public FooterOutput(Output output)
     {
-        this.output = output;
+        super(output);
     }
     public StringBuilder loadOutput(String[] body) {
-        StringBuilder painTextWithFooterOutput = new StringBuilder();
-        painTextWithFooterOutput.append(output.loadOutput(body));
-        painTextWithFooterOutput.append(System.lineSeparator());
-        painTextWithFooterOutput.append("==========================================================================================");
-        Formatter formatter = new Formatter(painTextWithFooterOutput);
-        painTextWithFooterOutput.append(System.lineSeparator());
+        StringBuilder footerOutput = new StringBuilder();
+        if (output!=null)
+        footerOutput.append(output.loadOutput(body));
+        footerOutput.append(System.lineSeparator());
+        footerOutput.append("==========================================================================================");
+        Formatter formatter = new Formatter(footerOutput);
+        footerOutput.append(System.lineSeparator());
         formatter.format("Total Lines in Output : %d", Arrays.stream(body).count());
-        return painTextWithFooterOutput;
+        return footerOutput;
 
     }
 }

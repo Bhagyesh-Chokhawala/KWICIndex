@@ -12,9 +12,6 @@ public class ConsoleOutputProcessing implements KwicIndices.outputStrategies.Out
     {
         try {
 
-                /*  Output output = new PainTextOutput();
-            output = new FooterOutput(output);*/
-           // String[] outputs = {"KwicIndices.outputFormat.PainTextOutput", "KwicIndices.outputFormat.HeaderOutput", "KwicIndices.outputFormat.FooterOutput"};
             Gson gson = new Gson();
             String[] outputs = gson.fromJson(Constants.CONSOLEOUTPUTLAYOUT, String[].class);
             Output output = null;
@@ -24,7 +21,6 @@ public class ConsoleOutputProcessing implements KwicIndices.outputStrategies.Out
             {
                 Class loadedMyClass = classLoader.loadClass(outputs[i]);
                 Constructor constructor = loadedMyClass.getConstructor(Output.class);
-              //  System.out.println("Loaded class name: " + loadedMyClass.getName());
                 output= (Output) constructor.newInstance(output);
             }
             System.out.println( output.loadOutput(result).toString());

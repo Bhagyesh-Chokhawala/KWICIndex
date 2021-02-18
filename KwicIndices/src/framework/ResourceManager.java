@@ -1,6 +1,7 @@
 package framework;
 
 import KwicIndices.MasterController;
+import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
 import java.io.IOException;
@@ -41,8 +42,13 @@ public class ResourceManager {
         return prop.getProperty(key);
     }
     public static <T> T getPropertyOrDefault(String key, T defaultValue) {
-        T value = (T) prop.getProperty(key);
-        return value == null ? (T) defaultValue : (T) value;
+        try {
+            T value = (T) prop.getProperty(key);
+            return value == null ? (T) defaultValue : (T) value;
+        }
+        catch (Exception e)  {
+            return defaultValue;
+        }
     }
     public static List<String> getCommaSeperatedPropertyOrDefault(String key, String[] defaultValue) {
         String value = prop.getProperty(key);
@@ -51,5 +57,9 @@ public class ResourceManager {
     public static  int getPropertyOrDefault(String key, int defaultValue) {
         String value= getResources().getPropertyOrDefault(key,String.valueOf(defaultValue));
         return NumberUtils.toInt(value, defaultValue);
+    }
+    public static  Boolean getPropertyOrDefault(String key, Boolean defaultValue) {
+        String value= getResources().getPropertyOrDefault(key,String.valueOf(defaultValue));
+        return BooleanUtils.toBooleanDefaultIfNull(BooleanUtils.toBoolean(value), defaultValue);
     }
 }
