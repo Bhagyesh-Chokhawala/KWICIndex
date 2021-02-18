@@ -175,9 +175,10 @@ Process finished with exit code 0
   * **KwicIndices.outputProcessor** -  Defines iooption strategy to output processor mapping.
   * **KwicIndices.AlphabetizerProcessor** - Defines case options to alphabetizer processor mapping.
   * **KwicIndices.shiftIgnoreWords** - coma separate list of ignore words. The words are staying in actual case but case options determines execution time consideration.
+  * **KwicIndices.shiftIgnoreWordsEnable** - Flag to turn on/off consideration of ignore words while shifting.
   * **KwicIndices.WordToIgnoreStrategies** - Defines case options to word to ignore mapping.
-  * **KwicIndices.ConsoleOutputLayout** -  Defines layout of console output.
-  * **KwicIndices.FileOutputLayout** -  Defines layout of File output.
+  * **KwicIndices.ConsoleOutputLayout** -  Defines layout of console output. Also user will be able to define what all decorators user wants to use.
+  * **KwicIndices.FileOutputLayout** -  Defines layout of File output.  Also user will be able to define what all decorators user wants to use.
   
 ### Testing Facts
 
